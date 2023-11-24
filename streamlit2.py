@@ -55,12 +55,12 @@ def page_home():
             model = resnet18(pretrained=False)
             restype = 'renet18'
             model.fc = nn.Linear(model.fc.in_features, 10)
-            model.load_state_dict(torch.load('model/model.pth', map_location='cpu'))
+            model.load_state_dict(torch.load('model.pth', map_location='cpu'))
         else:
             model = resnet50(pretrained=False)
             restype = 'renet50'
             model.fc = nn.Linear(2048, 10)
-            model.load_state_dict(torch.load('model/model2.pth', map_location='cpu'))
+            model.load_state_dict(torch.load('model2.pth', map_location='cpu'))
 
     with col2:
         selected2 = st.radio('Select download', ['as file', 'by URL'])
